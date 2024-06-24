@@ -1,0 +1,27 @@
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-24T15:14:44.120Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0a4y2ewVrs9Qb9bQtUhrN00DTHQuZdFKgKb7e6clcd3Nme0Q6swKGBGlI3zTBkaCotexQJMUdTR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:15:00.636Z"}
+info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-06-24T15:15:00.960Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0a4y2ewVrs9Qb9bQtUhrN00DTHQuZdFKgKb7e6clcd3Nme0Q6swKGBGlI3zTBkaCotexQJMUdTR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:15:35.841Z"}
+info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-06-24T15:15:36.089Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0a4y2ewVrs9Qb9bQtUhrN00DTHQuZdFKgKb7e6clcd3Nme0Q6swKGBGlI3zTBkaCotexQJMUdTR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:15:45.599Z"}
+info: Received response from APYHub API: {"data":"Please upgrade your workspace. Reach out to hello@apyhub.com to unblock your account."} {"timestamp":"2024-06-24T15:15:46.054Z"}
+error: Error converting currency: Failed to convert currency {"timestamp":"2024-06-24T15:15:46.054Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0a4y2ewVrs9Qb9bQtUhrN00DTHQuZdFKgKb7e6clcd3Nme0Q6swKGBGlI3zTBkaCotexQJMUdTR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:16:10.906Z"}
+info: Received response from APYHub API: {"data":"Please upgrade your workspace. Reach out to hello@apyhub.com to unblock your account."} {"timestamp":"2024-06-24T15:16:11.287Z"}
+error: Error converting currency: Failed to convert currency {"timestamp":"2024-06-24T15:16:11.287Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0a4y2ewVrs9Qb9bQtUhrN00DTHQuZdFKgKb7e6clcd3Nme0Q6swKGBGlI3zTBkaCotexQJMUdTR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:44:48.340Z"}
+info: Received response from APYHub API: {"data":"Please upgrade your workspace. Reach out to hello@apyhub.com to unblock your account."} {"timestamp":"2024-06-24T15:44:48.647Z"}
+error: Error converting currency: Failed to convert currency {"timestamp":"2024-06-24T15:44:48.648Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0a4y2ewVrs9Qb9bQtUhrN00DTHQuZdFKgKb7e6clcd3Nme0Q6swKGBGlI3zTBkaCotexQJMUdTR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:47:34.428Z"}
+info: Received response from APYHub API: {"data":"Please upgrade your workspace. Reach out to hello@apyhub.com to unblock your account."} {"timestamp":"2024-06-24T15:47:47.977Z"}
+error: Error converting currency: Failed to convert currency {"timestamp":"2024-06-24T15:47:47.977Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-24T15:48:44.229Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0COQq1AuItcnVHpbxatiG45XE6Gnvme21YA9QirlmFRwo3N0f92yxBFg3Yc5RnKmpR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:48:51.434Z"}
+info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-06-24T15:48:54.761Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0COQq1AuItcnVHpbxatiG45XE6Gnvme21YA9QirlmFRwo3N0f92yxBFg3Yc5RnKmpR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:49:18.686Z"}
+info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-06-24T15:49:19.095Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0COQq1AuItcnVHpbxatiG45XE6Gnvme21YA9QirlmFRwo3N0f92yxBFg3Yc5RnKmpR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:49:28.904Z"}
+info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-06-24T15:49:29.348Z"}
+error: source and target currencies are required in the request body {"timestamp":"2024-06-24T15:50:01.475Z"}
+info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0COQq1AuItcnVHpbxatiG45XE6Gnvme21YA9QirlmFRwo3N0f92yxBFg3Yc5RnKmpR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:50:16.150Z"}
+info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-06-24T15:50:18.860Z"}
