@@ -1,9 +1,8 @@
-// index.js
-
 import express from 'express';
 import fetch from 'node-fetch';
 import fs from 'fs/promises'; // Using fs.promises for async file read
 import logger from './logger.js';  // Import your Winston logger module
+import rateLimit from 'express-rate-limit';
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -37,7 +36,10 @@ const fetchExchangeRate = async (source, target, date) => {
   // Check if the data exists in cache
   if (exchangeRateCache[cacheKey]) {
     logger.info(`Retrieved exchange rate from cache for ${cacheKey}`);
-    return exchangeRateCache[cacheKey];
+    return {
+      ...exchangeRateCache[cacheKey],
+      fromCache: true  // Indicate that data is from cache
+    };
   }
 
   // Fetch data from API if not found in cache
@@ -64,17 +66,28 @@ const fetchExchangeRate = async (source, target, date) => {
 
     // Cache the fetched data
     exchangeRateCache[cacheKey] = {
-      date: data.date,
-      exchangeRate: data.exchange_rate,
-      convertedAmount: data.converted_amount
+      date: data.timestamp,  // Use the timestamp as the date
+      exchangeRate: data.data  // Use the data field as the exchange rate
     };
 
-    return exchangeRateCache[cacheKey];
+    return {
+      ...exchangeRateCache[cacheKey],
+      fromCache: false  // Indicate that data is from API, not from cache
+    };
   } catch (error) {
     logger.error(`Error fetching exchange rate from API: ${error.message}`);
     throw error;
   }
 };
+
+// Rate limiting middleware setup
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,  // 15 minutes
+  max: 100  // Max 100 requests per windowMs
+});
+
+// Apply rate limiter to all requests
+app.use(limiter);
 
 // Middleware to parse JSON request body
 app.use(express.json());
@@ -95,15 +108,14 @@ app.post('/convert', async (req, res) => {
   }
 
   try {
-    const cachedData = await fetchExchangeRate(source, target, date);
+    const exchangeData = await fetchExchangeRate(source, target, date);
 
     res.json({
       source,
       target,
-      date: cachedData.date,
-      exchangeRate: cachedData.exchangeRate,
-      convertedAmount: cachedData.convertedAmount,
-      fromCache: exchangeRateCache[`${source}_${target}_${date}`] ? true : false  // Add flag to indicate if data is from cache
+      date: exchangeData.date,
+      exchangeRate: exchangeData.exchangeRate,
+      fromCache: exchangeData.fromCache
     });
   } catch (error) {
     logger.error(`Error converting currency: ${error.message}`);
