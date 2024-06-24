@@ -122,3 +122,26 @@ info: Successfully read credentials {"timestamp":"2024-06-24T18:16:29.611Z"}
 info: Sending request to APYHub API for USD_EUR_2024-06-24: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0ARwZCbuSb6ud0NCYxAjizYxcImgQtLW18BZlFegSdJeRMjJyecXoDB96O8u76a1HapCjOTQG5"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T18:16:33.175Z"}
 info: Received response from APYHub API for USD_EUR_2024-06-24: {"data":0.93574551} {"timestamp":"2024-06-24T18:16:33.983Z"}
 info: Retrieved exchange rate from cache for USD_EUR_2024-06-24 {"timestamp":"2024-06-24T18:16:38.295Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-24T18:51:28.261Z"}
+info: Successfully read credentials {"timestamp":"2024-06-24T18:51:28.267Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-24T18:52:13.782Z"}
+info: Successfully read credentials {"timestamp":"2024-06-24T18:52:13.789Z"}
+info: Sending request to APYHub API for USD_EUR_2024-06-24: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0ARwZCbuSb6ud0NCYxAjizYxcImgQtLW18BZlFegSdJeRMjJyecXoDB96O8u76a1HapCjOTQG5"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T18:52:18.014Z"}
+info: Received response from APYHub API for USD_EUR_2024-06-24: {"data":0.93574551} {"timestamp":"2024-06-24T18:52:31.690Z"}
+info: Sending request to APYHub API for USD_EUR_2023-06-24: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0ARwZCbuSb6ud0NCYxAjizYxcImgQtLW18BZlFegSdJeRMjJyecXoDB96O8u76a1HapCjOTQG5"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2023-06-24\"}"} {"timestamp":"2024-06-24T18:53:06.514Z"}
+info: Received response from APYHub API for USD_EUR_2023-06-24: {"data":0.914804} {"timestamp":"2024-06-24T18:53:06.954Z"}
+info: Sending request to APYHub API for USD_EUR_undefined: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0ARwZCbuSb6ud0NCYxAjizYxcImgQtLW18BZlFegSdJeRMjJyecXoDB96O8u76a1HapCjOTQG5"},"body":"{\"source\":\"USD\",\"target\":\"EUR\"}"} {"timestamp":"2024-06-24T18:53:28.518Z"}
+info: Received response from APYHub API for USD_EUR_undefined: {"data":0.93574551} {"timestamp":"2024-06-24T18:53:28.886Z"}
+info: Sending request to APYHub API for USD_EUR_2028-06-24: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0ARwZCbuSb6ud0NCYxAjizYxcImgQtLW18BZlFegSdJeRMjJyecXoDB96O8u76a1HapCjOTQG5"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2028-06-24\"}"} {"timestamp":"2024-06-24T18:53:49.772Z"}
+info: Received response from APYHub API for USD_EUR_2028-06-24: {"data":"Please upgrade your workspace. Reach out to hello@apyhub.com to unblock your account."} {"timestamp":"2024-06-24T18:54:00.639Z"}
+error: Error fetching exchange rate from API: Failed to convert currency {"timestamp":"2024-06-24T18:54:00.640Z"}
+error: Error converting currency: Failed to convert currency {"timestamp":"2024-06-24T18:54:00.641Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-24T18:57:29.949Z"}
+info: Successfully read credentials {"timestamp":"2024-06-24T18:57:29.975Z"}
+info: Sending request to APYHub API for USD_EUR_2028-06-24: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0MstoLkyvz5AYnEl1rHzFrZYPjes0AkSCmdGuRB7ZG3yGwBohRB0OX8XIQNzqu7I5rczSL9S"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2028-06-24\"}"} {"timestamp":"2024-06-24T18:57:35.574Z"}
+info: Received response from APYHub API for USD_EUR_2028-06-24: {"error":{"message":"Please provide a valid date","code":103}} {"timestamp":"2024-06-24T18:57:36.250Z"}
+error: Error fetching exchange rate from API: [object Object] {"timestamp":"2024-06-24T18:57:36.251Z"}
+error: Error converting currency: [object Object] {"timestamp":"2024-06-24T18:57:36.252Z"}
+info: Sending request to APYHub API for USD_EUR_undefined: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0MstoLkyvz5AYnEl1rHzFrZYPjes0AkSCmdGuRB7ZG3yGwBohRB0OX8XIQNzqu7I5rczSL9S"},"body":"{\"source\":\"USD\",\"target\":\"EUR\"}"} {"timestamp":"2024-06-24T18:58:19.945Z"}
+info: Received response from APYHub API for USD_EUR_undefined: {"data":0.93574551} {"timestamp":"2024-06-24T18:58:20.325Z"}
+info: Retrieved exchange rate from cache for USD_EUR_undefined {"timestamp":"2024-06-24T18:58:38.813Z"}

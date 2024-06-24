@@ -66,7 +66,6 @@ const fetchExchangeRate = async (source, target, date) => {
 
     // Cache the fetched data
     exchangeRateCache[cacheKey] = {
-      date: data.timestamp,  // Use the timestamp as the date
       exchangeRate: data.data  // Use the data field as the exchange rate
     };
 
@@ -113,7 +112,7 @@ app.post('/convert', async (req, res) => {
     res.json({
       source,
       target,
-      date: exchangeData.date,
+      date,
       exchangeRate: exchangeData.exchangeRate,
       fromCache: exchangeData.fromCache
     });
