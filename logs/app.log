@@ -25,3 +25,14 @@ info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-
 error: source and target currencies are required in the request body {"timestamp":"2024-06-24T15:50:01.475Z"}
 info: Sending request to APYHub API: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0COQq1AuItcnVHpbxatiG45XE6Gnvme21YA9QirlmFRwo3N0f92yxBFg3Yc5RnKmpR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T15:50:16.150Z"}
 info: Received response from APYHub API: {"data":0.93574551} {"timestamp":"2024-06-24T15:50:18.860Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-24T16:18:49.985Z"}
+info: Successfully read credentials {"timestamp":"2024-06-24T16:18:49.990Z"}
+info: Sending request to APYHub API for USD_EUR_2024-06-24: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0COQq1AuItcnVHpbxatiG45XE6Gnvme21YA9QirlmFRwo3N0f92yxBFg3Yc5RnKmpR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T16:18:57.941Z"}
+info: Received response from APYHub API for USD_EUR_2024-06-24: {"data":0.93574551} {"timestamp":"2024-06-24T16:18:58.365Z"}
+info: Retrieved exchange rate from cache for USD_EUR_2024-06-24 {"timestamp":"2024-06-24T16:19:21.313Z"}
+info: Retrieved exchange rate from cache for USD_EUR_2024-06-24 {"timestamp":"2024-06-24T16:19:35.326Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-24T16:21:19.846Z"}
+info: Successfully read credentials {"timestamp":"2024-06-24T16:21:19.850Z"}
+info: Sending request to APYHub API for USD_EUR_2024-06-24: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0COQq1AuItcnVHpbxatiG45XE6Gnvme21YA9QirlmFRwo3N0f92yxBFg3Yc5RnKmpR"},"body":"{\"source\":\"USD\",\"target\":\"EUR\",\"date\":\"2024-06-24\"}"} {"timestamp":"2024-06-24T16:21:23.337Z"}
+info: Received response from APYHub API for USD_EUR_2024-06-24: {"data":0.93574551} {"timestamp":"2024-06-24T16:21:23.740Z"}
+info: Retrieved exchange rate from cache for USD_EUR_2024-06-24 {"timestamp":"2024-06-24T16:21:32.485Z"}

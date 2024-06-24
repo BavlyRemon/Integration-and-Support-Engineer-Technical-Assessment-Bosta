@@ -1,6 +1,8 @@
+// index.js
+
 import express from 'express';
 import fetch from 'node-fetch';
-import fs from 'fs';
+import fs from 'fs/promises'; // Using fs.promises for async file read
 import logger from './logger.js';  // Import your Winston logger module
 
 const app = express();
@@ -8,12 +10,15 @@ const PORT = process.env.PORT || 3000;
 const CREDENTIALS_PATH = './apyhub_credentials.json';
 
 let token = '';
+const exchangeRateCache = {};  // In-memory cache for exchange rates
 
 // Function to read token from credentials file
-const readCredentials = () => {
+const readCredentials = async () => {
   try {
-    const credentials = JSON.parse(fs.readFileSync(CREDENTIALS_PATH));
-    token = credentials.token;
+    const credentials = await fs.readFile(CREDENTIALS_PATH, 'utf8');
+    const { token: credentialsToken } = JSON.parse(credentials);
+    token = credentialsToken;
+    logger.info('Successfully read credentials');
   } catch (error) {
     logger.error(`Error reading credentials: ${error.message}`);
     process.exit(1);
@@ -25,6 +30,52 @@ readCredentials();
 
 const API_URL = 'https://api.apyhub.com/data/convert/currency';
 
+// Function to fetch exchange rate from API or cache
+const fetchExchangeRate = async (source, target, date) => {
+  const cacheKey = `${source}_${target}_${date}`;
+  
+  // Check if the data exists in cache
+  if (exchangeRateCache[cacheKey]) {
+    logger.info(`Retrieved exchange rate from cache for ${cacheKey}`);
+    return exchangeRateCache[cacheKey];
+  }
+
+  // Fetch data from API if not found in cache
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'apy-token': token
+    },
+    body: JSON.stringify({ source, target, date })
+  };
+
+  logger.info(`Sending request to APYHub API for ${cacheKey}: ${JSON.stringify(requestOptions)}`);
+
+  try {
+    const response = await fetch(API_URL, requestOptions);
+    const data = await response.json();
+
+    logger.info(`Received response from APYHub API for ${cacheKey}: ${JSON.stringify(data)}`);
+
+    if (!response.ok) {
+      throw new Error(data.error || 'Failed to convert currency');
+    }
+
+    // Cache the fetched data
+    exchangeRateCache[cacheKey] = {
+      date: data.date,
+      exchangeRate: data.exchange_rate,
+      convertedAmount: data.converted_amount
+    };
+
+    return exchangeRateCache[cacheKey];
+  } catch (error) {
+    logger.error(`Error fetching exchange rate from API: ${error.message}`);
+    throw error;
+  }
+};
+
 // Middleware to parse JSON request body
 app.use(express.json());
 
@@ -34,7 +85,7 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something broke!');
 });
 
-// Endpoint to convert currencies
+// Endpoint to convert currencies with caching
 app.post('/convert', async (req, res) => {
   const { source, target, date } = req.body;
 
@@ -44,32 +95,15 @@ app.post('/convert', async (req, res) => {
   }
 
   try {
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apy-token': token
-      },
-      body: JSON.stringify({ source, target, date })
-    };
-
-    logger.info(`Sending request to APYHub API: ${JSON.stringify(requestOptions)}`);
-
-    const response = await fetch(API_URL, requestOptions);
-    const data = await response.json();
-
-    logger.info(`Received response from APYHub API: ${JSON.stringify(data)}`);
-
-    if (!response.ok) {
-      throw new Error(data.error || 'Failed to convert currency');
-    }
+    const cachedData = await fetchExchangeRate(source, target, date);
 
     res.json({
       source,
       target,
-      date: data.date,
-      exchangeRate: data.exchange_rate,
-      convertedAmount: data.converted_amount
+      date: cachedData.date,
+      exchangeRate: cachedData.exchangeRate,
+      convertedAmount: cachedData.convertedAmount,
+      fromCache: exchangeRateCache[`${source}_${target}_${date}`] ? true : false  // Add flag to indicate if data is from cache
     });
   } catch (error) {
     logger.error(`Error converting currency: ${error.message}`);
