@@ -145,3 +145,7 @@ error: Error converting currency: [object Object] {"timestamp":"2024-06-24T18:57
 info: Sending request to APYHub API for USD_EUR_undefined: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0MstoLkyvz5AYnEl1rHzFrZYPjes0AkSCmdGuRB7ZG3yGwBohRB0OX8XIQNzqu7I5rczSL9S"},"body":"{\"source\":\"USD\",\"target\":\"EUR\"}"} {"timestamp":"2024-06-24T18:58:19.945Z"}
 info: Received response from APYHub API for USD_EUR_undefined: {"data":0.93574551} {"timestamp":"2024-06-24T18:58:20.325Z"}
 info: Retrieved exchange rate from cache for USD_EUR_undefined {"timestamp":"2024-06-24T18:58:38.813Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-25T13:36:20.373Z"}
+info: Successfully read credentials {"timestamp":"2024-06-25T13:36:20.426Z"}
+info: Sending request to APYHub API for USD_EUR_undefined: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0MstoLkyvz5AYnEl1rHzFrZYPjes0AkSCmdGuRB7ZG3yGwBohRB0OX8XIQNzqu7I5rczSL9S"},"body":"{\"source\":\"USD\",\"target\":\"EUR\"}"} {"timestamp":"2024-06-25T13:38:04.028Z"}
+info: Received response from APYHub API for USD_EUR_undefined: {"data":0.93149157} {"timestamp":"2024-06-25T13:38:04.808Z"}
