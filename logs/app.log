@@ -149,3 +149,9 @@ info: Server is running on http://localhost:3000 {"timestamp":"2024-06-25T13:36:
 info: Successfully read credentials {"timestamp":"2024-06-25T13:36:20.426Z"}
 info: Sending request to APYHub API for USD_EUR_undefined: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0MstoLkyvz5AYnEl1rHzFrZYPjes0AkSCmdGuRB7ZG3yGwBohRB0OX8XIQNzqu7I5rczSL9S"},"body":"{\"source\":\"USD\",\"target\":\"EUR\"}"} {"timestamp":"2024-06-25T13:38:04.028Z"}
 info: Received response from APYHub API for USD_EUR_undefined: {"data":0.93149157} {"timestamp":"2024-06-25T13:38:04.808Z"}
+info: Server is running on http://localhost:3000 {"timestamp":"2024-06-25T13:59:21.675Z"}
+info: Successfully read credentials {"timestamp":"2024-06-25T13:59:21.685Z"}
+info: Sending request to APYHub API for USD_EUR_undefined: {"method":"POST","headers":{"Content-Type":"application/json","apy-token":"APY0MstoLkyvz5AYnEl1rHzFrZYPjes0AkSCmdGuRB7ZG3yGwBohRB0OX8XIQNzqu7I5rczSL9S"},"body":"{\"source\":\"USD\",\"target\":\"EUR\"}"} {"timestamp":"2024-06-25T14:13:31.535Z"}
+info: Received response from APYHub API for USD_EUR_undefined: {"data":0.93149157} {"timestamp":"2024-06-25T14:13:39.783Z"}
+info: Retrieved exchange rate from cache for USD_EUR_undefined {"timestamp":"2024-06-25T14:13:42.010Z"}
+info: Retrieved exchange rate from cache for USD_EUR_undefined {"timestamp":"2024-06-25T14:13:45.165Z"}
